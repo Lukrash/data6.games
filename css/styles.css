@@ -1,11 +1,13 @@
 :root{
     --bg:#0f1117;
     --card:#1a1d26;
-    --card-hover:#222734;
+    --card-hover:#232936;
+
     --primary:#00d4ff;
     --secondary:#7a5cff;
+
     --text:#ffffff;
-    --text-muted:#b0b8c5;
+    --text-muted:#bdbdbd;
 }
 
 *{
@@ -15,22 +17,17 @@
 }
 
 body{
-    font-family:'Segoe UI',sans-serif;
     background:var(--bg);
     color:var(--text);
+    font-family:'Segoe UI',sans-serif;
 }
-
-/* HERO */
 
 .hero{
     height:450px;
 
     background:
-        linear-gradient(
-            rgba(10,10,15,.65),
-            rgba(10,10,15,.85)
-        ),
-        url("images/banner.jpg");
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.8)),
+        url('../images/banner.jpg');
 
     background-size:cover;
     background-position:center;
@@ -41,60 +38,44 @@ body{
     align-items:center;
 
     text-align:center;
-    padding:20px;
 }
 
 .hero h1{
     font-size:4rem;
-    letter-spacing:4px;
     text-transform:uppercase;
-    color:white;
+    letter-spacing:4px;
 
-    text-shadow:
-        0 0 15px var(--primary);
+    text-shadow:0 0 20px var(--primary);
 }
 
 .hero p{
     margin-top:15px;
-    font-size:1.2rem;
-    color:#d7dce5;
+    color:#d8d8d8;
 }
-
-/* TITULO */
 
 .section-title{
     text-align:center;
-    margin:60px 0 40px;
+    margin:60px 0;
     font-size:2rem;
 }
-
-/* GRID DE JUEGOS */
 
 .games-grid{
     max-width:1400px;
     margin:auto;
-    padding:0 30px 70px;
+
+    padding:0 30px 60px;
 
     display:grid;
-    grid-template-columns:
-        repeat(auto-fit,minmax(300px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
 }
-
-/* TARJETAS */
 
 .game-card{
     background:var(--card);
     border-radius:16px;
     overflow:hidden;
 
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:
-        transform .3s,
-        box-shadow .3s,
-        background .3s;
+    transition:all .3s ease;
 }
 
 .game-card:hover{
@@ -103,11 +84,11 @@ body{
     background:var(--card-hover);
 
     box-shadow:
-        0 0 20px rgba(0,212,255,.15),
-        0 0 40px rgba(122,92,255,.08);
+        0 0 20px rgba(0,212,255,.2),
+        0 0 40px rgba(122,92,255,.15);
 }
 
-.game-card img{
+.game-image{
     width:100%;
     height:220px;
     object-fit:cover;
@@ -117,27 +98,25 @@ body{
     padding:20px;
 }
 
-.game-content h2{
+.game-title{
     margin-bottom:10px;
 }
 
-.game-content p{
+.game-description{
     color:var(--text-muted);
-    line-height:1.6;
+    line-height:1.5;
     margin-bottom:20px;
-    min-height:60px;
 }
-
-/* BOTÓN */
 
 .play-btn{
     display:block;
 
     text-align:center;
-    text-decoration:none;
 
+    text-decoration:none;
     color:white;
-    font-weight:600;
+
+    font-weight:bold;
 
     padding:12px;
 
@@ -149,44 +128,14 @@ body{
             var(--secondary),
             var(--primary)
         );
-
-    transition:
-        transform .3s,
-        box-shadow .3s;
 }
 
 .play-btn:hover{
-    transform:scale(1.03);
-
-    box-shadow:
-        0 0 15px rgba(0,212,255,.5);
+    opacity:.9;
 }
-
-/* FOOTER */
 
 footer{
     text-align:center;
     padding:30px;
-
-    color:#80889a;
-
-    border-top:
-        1px solid rgba(255,255,255,.05);
-}
-
-/* MÓVIL */
-
-@media (max-width:768px){
-
-    .hero{
-        height:350px;
-    }
-
-    .hero h1{
-        font-size:2.5rem;
-    }
-
-    .hero p{
-        font-size:1rem;
-    }
+    color:#7c7c7c;
 }
