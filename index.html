@@ -1,34 +1,185 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>DATA6 Games</title>
-
+    <title>Data6 Games | Videojuegos Indies & Desarrollo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a0d14',
+                            card: '#121824',
+                            cyan: '#00f2fe',
+                            magenta: '#ff007f',
+                            purple: '#7928ca'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Orbitron', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<body class="bg-[#0a0d14] text-gray-100 font-sans antialiased selection:bg-[#ff007f] selection:text-white overflow-x-hidden">
 
-<body>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0d14]/80 backdrop-blur-md border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#00f2fe] to-[#ff007f] p-[2px] shadow-[0_0_15px_rgba(0,242,254,0.3)] group-hover:shadow-[0_0_25px_rgba(255,0,127,0.5)] transition-all duration-300">
+                    <div class="w-full h-full bg-[#0a0d14] rounded-[10px] flex items-center justify-center">
+                        <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00f2fe] to-[#ff007f] text-xl">D6</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg tracking-wider text-white group-hover:text-[#00f2fe] transition-colors">DATA6</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gray-400 font-semibold -mt-1">GAMES</span>
+                </div>
+            </a>
 
-    <section class="hero">
-        <h1>DATA6 Games</h1>
-        <p>Juegos desarrollados por Lucas Chicharro</p>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
+                <a href="#inicio" class="hover:text-[#00f2fe] transition-colors">Inicio</a>
+                <a href="#juegos" class="hover:text-[#00f2fe] transition-colors">Juegos</a>
+                <a href="#nosotros" class="hover:text-[#00f2fe] transition-colors">Sobre Mí</a>
+                <a href="http://lucas.chicharro.net" target="_blank" class="hover:text-[#00f2fe] transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <a href="#juegos" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#00f2fe] to-[#7928ca] text-white text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,242,254,0.4)]">
+                    <i data-lucide="gamepad-2" class="w-4 h-4"></i> Catálogo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <!-- Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#00f2fe]/20 to-[#ff007f]/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900/80 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-6 shadow-[0_0_15px_rgba(0,242,254,0.15)]">
+                <i data-lucide="sparkles" class="w-4 h-4"></i> Estudio Independiente de Videojuegos
+            </div>
+
+            <h1 class="text-4xl md:text-7xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight mb-6">
+                CREANDO EXPERIENCIAS <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2fe] via-[#ff007f] to-[#7928ca]">INTERACTIVAS & ÚNICAS</span>
+            </h1>
+
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 font-sans">
+                Bienvenido al portfolio de <strong>Data6 Games</strong>. Explora títulos desarrollados con pasión y un enfoque retro.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#juegos" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#ff007f] text-white font-bold text-sm tracking-wider uppercase shadow-[0_0_30px_rgba(255,0,127,0.4)] hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                    <i data-lucide="play" class="w-4 h-4 fill-white"></i> Ver Videojuegos
+                </a>
+                <a href="http://lucas.chicharro.net" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-900 border border-gray-700 text-gray-300 hover:text-white hover:border-cyan-400 font-bold text-sm tracking-wider uppercase transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="user" class="w-4 h-4"></i> Contactar
+                </a>
+            </div>
+        </div>
     </section>
 
-    <h2 class="section-title">🎮 Mis Juegos</h2>
+    <!-- Filters & Game List Section -->
+    <section id="juegos" class="py-20 bg-[#0c101a] border-y border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-wide">PORTFOLIO DE JUEGOS</h2>
+                    <p class="text-gray-400 text-sm font-sans mt-2">Filtra por género o explora todas las creaciones.</p>
+                </div>
 
-    <section class="games-grid" id="gamesContainer">
-        <!-- Los juegos se cargarán desde JavaScript -->
+                <!-- Genre Filters -->
+                <div id="filter-buttons" class="flex flex-wrap gap-2">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider border border-cyan-500 bg-cyan-500/20 text-cyan-300">Todos</button>
+                    <button data-filter="Plataformas" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider border border-gray-800 bg-gray-900 text-gray-400 hover:border-cyan-500/50">Plataformas</button>
+                    <button data-filter="Retro" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider border border-gray-800 bg-gray-900 text-gray-400 hover:border-cyan-500/50">Retro</button>
+                </div>
+            </div>
+
+            <!-- Games Grid -->
+            <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Injected dynamically via js/main.js -->
+            </div>
+        </div>
     </section>
 
-    <footer>
-        © 2026 DATA6 Games
+    <!-- About Section -->
+    <section id="nosotros" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#00f2fe] to-[#ff007f] opacity-30 blur-xl"></div>
+                <div class="relative bg-[#121824] border border-gray-800 rounded-2xl p-8 font-sans">
+                    <h3 class="text-2xl font-bold text-white mb-4 font-sans">Detrás de Data6 Games</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Soy un desarrollador independiente apasionado por la programación, el diseño  y el arte digital. <strong>Data6 Games</strong> nace como la marca personal bajo la cual creo proyectos personales que me permiten aprender más acerca de la creacion de videojuegos en todas sus facetas.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Actualmente trabajo con motores web como Three.js y Box2D para llevar mis ideas de videojuegos desde el concepto hasta la implementación. También me encanta la idea de hacer remakes de clásicos y experimentar con nuevas mecánicas de juego.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-900/50 border border-gray-800">
+                    <div class="p-3 rounded-lg bg-cyan-500/10 text-cyan-400">
+                        <i data-lucide="code-2" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Desarrollo Web</h4>
+                        <p class="text-gray-400 text-sm font-sans">Juegos optimizados para navegador web con rendimiento fluido y sobre todo sea accesible por el maximo número de personas.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-gray-900/50 border border-gray-800">
+                    <div class="p-3 rounded-lg bg-pink-500/10 text-pink-400">
+                        <i data-lucide="palette" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Arte</h4>
+                        <p class="text-gray-400 text-sm font-sans">Como desarrollador, el apartado gráfico no es mi fuerte, pero poco a poco trataré de mejorar mis habilidades en diseño y arte digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contacto" class="bg-[#07090e] border-t border-gray-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00f2fe] to-[#ff007f] p-[1px]">
+                    <div class="w-full h-full bg-[#0a0d14] rounded-[7px] flex items-center justify-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00f2fe] to-[#ff007f] text-xs">D6</div>
+                </div>
+                <span class="text-gray-400 text-xs font-sans">© 2026 Data6 Games. Todos los derechos reservados.</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-gray-400">
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i data-lucide="twitch" class="w-5 h-5"></i></a>
+            </div>
+        </div>
     </footer>
 
+    <script src="js/games-data.js"></script>
     <script src="js/main.js"></script>
-
 </body>
-
 </html>
